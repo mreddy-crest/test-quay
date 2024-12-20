@@ -26,8 +26,8 @@ jobs:
         context: .
         file: .github/workflows/Dockerfile
         push: true
-        tags: quay.io/manoj_snyk/image1:latest
+        tags: quay.io/manoj_snyk/test-repo-2/image1:latest
         labels: org.opencontainers.image.source=https://bitbucket.org/nikhilmane_crest/new_project/src/master/
     - name: Build and push Docker Image 2 (with Attestation)
       run: |
-        docker buildx build --provenance=true --tag quay.io/manoj_snyk/image2:latest --push -f .github/workflows/Dockerfile .
+        docker buildx build --provenance=true --tag quay.io/manoj_snyk/test-repo-2/image2:latest --push -f .github/workflows/Dockerfile .
