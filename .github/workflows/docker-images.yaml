@@ -21,7 +21,7 @@ jobs:
     - name: Log in to Nexus Container Registry
       uses: docker/login-action@v2
       with:
-        registry: https://41e3-122-169-42-28.ngrok-free.app/
+        registry: https://4704-122-169-42-28.ngrok-free.app/repository/my-docker-repo/v2/
         username: ${{ secrets.NEXUS_USERNAME }}
         password: ${{ secrets.NEXUS_PASSWORD }}
 
@@ -31,9 +31,9 @@ jobs:
         context: .
         file: .github/workflows/Dockerfile
         push: true
-        tags: https://41e3-122-169-42-28.ngrok-free.app/repository/docker/image1:latest
+        tags: https://4704-122-169-42-28.ngrok-free.app/repository/my-docker-repo/v2/image1:latest
         labels: org.opencontainers.image.source=https://bitbucket.org/your_project/source
 
     - name: Build and push Docker Image 2 (with Attestation)
       run: |
-        docker buildx build --provenance=true --tag https://41e3-122-169-42-28.ngrok-free.app/repository/docker/image2:latest --push -f .github/workflows/Dockerfile .
+        docker buildx build --provenance=true --tag https://4704-122-169-42-28.ngrok-free.app/repository/my-docker-repo/v2/image2:latest --push -f .github/workflows/Dockerfile .
