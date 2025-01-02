@@ -11,4 +11,4 @@ EXPOSE 80
 # Define environment variable
 ENV NAME World
 # Instead, just run a simple Python command
-CMD ["python", "-c", "print('Image 1 - Hello, World!')"]
+CMD ["python", "-c", "print('Image 2 - Hello, World!')"]
